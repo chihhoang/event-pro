@@ -70,4 +70,12 @@ public class User extends Audit {
       orphanRemoval = true,
       mappedBy = "user")
   private Set<Event> events = new HashSet<>();
+
+  @JsonIgnore
+  @OneToMany(
+      fetch = FetchType.LAZY,
+      cascade = CascadeType.ALL,
+      orphanRemoval = true,
+      mappedBy = "user")
+  private Set<OrderItem> orderItems = new HashSet<>();
 }
