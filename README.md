@@ -28,7 +28,9 @@ Also the `spring.profiles.active` value should only be `local`
 Explore and test available APIs via Swagger documentation  
 http://localhost:9000/swagger-ui.html
 
-## API
+To actually make authenticated request, use Postman as below
+
+## Access Protected API with Postman 
 Download [Postman](https://www.getpostman.com) and import below collection for a list of available APIs  
 [Postman Collection](https://www.getpostman.com/collections/02549973295799e83bff)
 
