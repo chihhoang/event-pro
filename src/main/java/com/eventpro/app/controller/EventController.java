@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 /** @author choang on 10/23/19 */
+/** @author manishayacham on 11/19/19 - implemented List API's */
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/events")
@@ -45,9 +46,10 @@ public class EventController {
             description, file, totalTickets, ticketPrice, startTime, endTime, username));
   }
 
-  @GetMapping
+  @GetMapping("/list")
   public ResponseEntity<List<Event>> listEvents() {
     return ResponseEntity.ok(eventService.listEvents());
+	  
   }
 
   @DeleteMapping("/{id}")
@@ -59,4 +61,6 @@ public class EventController {
 
     return ResponseEntity.ok(Event.builder().id(id).build());
   }
+  
+  
 }

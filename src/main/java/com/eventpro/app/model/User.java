@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -64,6 +65,7 @@ public class User extends Audit {
   private Set<Role> roles = Sets.newHashSet(Role.ROLE_USER);
 
   @JsonIgnore
+  @Transient 
   @OneToMany(
       fetch = FetchType.LAZY,
       cascade = CascadeType.ALL,
@@ -72,6 +74,7 @@ public class User extends Audit {
   private Set<Event> events = new HashSet<>();
 
   @JsonIgnore
+  @Transient 
   @OneToMany(
       fetch = FetchType.LAZY,
       cascade = CascadeType.ALL,
