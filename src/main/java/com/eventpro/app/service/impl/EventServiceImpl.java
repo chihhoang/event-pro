@@ -8,12 +8,15 @@ import com.eventpro.app.service.EventService;
 import com.eventpro.app.util.Utils;
 import java.time.Instant;
 import java.util.List;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 /** @author choang on 11/2/19 */
+/** @author manishayacham on 11/19/19 - implemented List API's*/
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -48,7 +51,7 @@ public class EventServiceImpl implements EventService {
 
   @Override
   public Event getEvent(long id) {
-    return null;
+    return eventRepository.findAllById(id);
   }
 
   @Override
@@ -62,7 +65,7 @@ public class EventServiceImpl implements EventService {
   }
 
   @Override
-  public List<Event> listEvents() {
-    return null;
+  public List<Event> listEvents() { 
+    return eventRepository.findAll();
   }
 }

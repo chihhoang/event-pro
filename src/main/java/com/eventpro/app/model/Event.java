@@ -40,6 +40,7 @@ public class Event extends Audit {
   private String location;
   private Instant startTime;
   private Instant endTime;
+  private String eventName;
 
   @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)

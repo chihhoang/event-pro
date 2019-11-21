@@ -8,5 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
-  List<Event> findByUser(User user);
+	
+	 List<Event> findByUser(User user);
+
+	 Event findAllById(long id);
 }
