@@ -74,6 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public void configure(WebSecurity web) {
     web.ignoring()
         .antMatchers(HttpMethod.OPTIONS, "/**")
+        .antMatchers("/env")
         .antMatchers("/healthCheck")
         .antMatchers("/h2-console/**")
         .antMatchers("/v2/api-docs")
@@ -83,6 +84,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/swagger-resources/**")
         .antMatchers("/swagger-ui.html")
         .antMatchers("/test/**")
-    	.antMatchers("/events/list");
+        .antMatchers("/events/list");
   }
 }

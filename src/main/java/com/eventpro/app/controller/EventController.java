@@ -36,8 +36,8 @@ public class EventController {
       @RequestParam String description,
       @RequestParam int totalTickets,
       @RequestParam double ticketPrice,
-      @RequestParam Instant startTime,
-      @RequestParam Instant endTime,
+      @RequestParam(required = false) Instant startTime,
+      @RequestParam(required = false) Instant endTime,
       HttpServletRequest request) {
     String username = tokenProvider.getUserLogin(tokenProvider.resolveToken(request));
 
@@ -49,7 +49,6 @@ public class EventController {
   @GetMapping("/list")
   public ResponseEntity<List<Event>> listEvents() {
     return ResponseEntity.ok(eventService.listEvents());
-	  
   }
 
   @DeleteMapping("/{id}")
@@ -61,6 +60,4 @@ public class EventController {
 
     return ResponseEntity.ok(Event.builder().id(id).build());
   }
-  
-  
 }
