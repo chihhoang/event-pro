@@ -48,6 +48,23 @@ public class EventProApplication {
 
         userService.createUser(admin);
       }
+
+      if (!userRepository.findOneByUsername("user").isPresent()) {
+        UserDTO user =
+            UserDTO.builder()
+                .username("user")
+                .password("user")
+                .email("user@gmail.com")
+                .activated(true)
+                .createdBy("admin")
+                .firstName("Bruce")
+                .lastName("Wayne")
+                .imageUrl("http://example.com")
+                .roles(Sets.newHashSet(Role.ROLE_USER))
+                .build();
+
+        userService.createUser(user);
+      }
     };
   }
 }
