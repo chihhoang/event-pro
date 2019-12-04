@@ -13,7 +13,11 @@ import com.eventpro.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /** @author manishayacham on 11/19/19 */
+/**@author anvitha - getAllOrdersForUser API **/
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -42,5 +46,18 @@ public class OrderServiceImpl implements OrderService {
 	           .event(event)
 	            .build());
 	  }
+
+	@Override
+	public List<OrderItem> getAllOrdersForUser(String username) {
+		User user = userService.getUserByUsername(username);
+		List<OrderItem> orderPurchase = orderRepository.findByUser(user);
+
+		List<OrderItem> filterPurchaseOnly = orderPurchase
+				.stream()
+				.filter(OrderItem::isPurchased)
+				.collect(Collectors.toList());
+		return filterPurchaseOnly;
+	}
+
 
 }
