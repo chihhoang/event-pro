@@ -23,4 +23,6 @@ public interface EventService {
   Event deleteEvent(long id, String username);
 
   List<Event> listEvents();
+  
+  Event updateEvent(Event event);
 }

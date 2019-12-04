@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /** @author choang on 11/2/19 */
 /** @author manishayacham on 11/19/19 - implemented List API's*/
+/**@author anvitha - update event table*/
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -68,4 +69,9 @@ public class EventServiceImpl implements EventService {
   public List<Event> listEvents() { 
     return eventRepository.findAll();
   }
+
+  @Override
+  public Event updateEvent(Event event) {
+	return eventRepository.save(event);
+}
 }
