@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 /** @author choang on 10/24/19 */
 public interface EventService {
   Event createEvent(
+	  String eventName,
       String description,
       MultipartFile multipartFile,
       int totalTickets,
