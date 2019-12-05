@@ -42,3 +42,4 @@ signup/authenticate once and use the generated token to make subsequent requests
 
 ## Authorization Flow
 ![Auth Image](./src/main/resources/AuthDiagram.png)
+ 
