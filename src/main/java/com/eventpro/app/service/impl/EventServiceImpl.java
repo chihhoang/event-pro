@@ -27,6 +27,7 @@ public class EventServiceImpl implements EventService {
 
   @Override
   public Event createEvent(
+	  String eventName,
       String description,
       MultipartFile multipartFile,
       int totalTickets,
@@ -39,6 +40,7 @@ public class EventServiceImpl implements EventService {
 
     return eventRepository.save(
         Event.builder()
+        	.eventName(eventName)
             .description(description)
             .imageUrl(asset.getS3Url())
             .totalTickets(totalTickets)
