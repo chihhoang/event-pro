@@ -3,6 +3,8 @@ app:
 
 server:
   port: 8443
+  schema: https
+  secure: false
 
 spring:
   profiles:
