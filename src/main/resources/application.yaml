@@ -2,7 +2,11 @@ app:
   env: none
 
 server:
-    port: 8443
+    port: 443
+    ssl.key-store: /home/ubuntu/tomcat.keystore
+    ssl.key-store-password: chargers@123
+    ssl.keyStoreType: PKCS12
+    ssl.keyAlias: tomcat
 
 spring:
   profiles:
