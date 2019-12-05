@@ -2,7 +2,7 @@ app:
   env: none
 
 server:
-  port: 9000
+  port: 8443
 
 spring:
   profiles:
