@@ -18,6 +18,6 @@ public class WelcomeController {
 
   @GetMapping("/healthCheck")
   public String healthCheck() {
-    return "Health Check Okay";
+    return "Health Check is Okay";
   }
 }
