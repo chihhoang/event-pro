@@ -1,5 +1,5 @@
 app:
-  env: preprod
+  env: hello
 
 server:
   port: 8443
