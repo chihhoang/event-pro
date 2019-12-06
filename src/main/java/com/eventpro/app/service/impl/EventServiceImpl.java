@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 /** @author choang on 11/2/19 */
 /** @author manishayacham on 11/19/19 - implemented List API's*/
 /**@author anvitha - update event table*/
+/** @author leela alekhya on 12/5/19 */
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -30,6 +31,7 @@ public class EventServiceImpl implements EventService {
 	  String eventName,
       String description,
       MultipartFile multipartFile,
+      String location,
       int totalTickets,
       double ticketPrice,
       Instant startTime,
@@ -43,6 +45,7 @@ public class EventServiceImpl implements EventService {
         	.eventName(eventName)
             .description(description)
             .imageUrl(asset.getS3Url())
+            .location(location)
             .totalTickets(totalTickets)
             .availableTickets(totalTickets)
             .ticketPrice(ticketPrice)
