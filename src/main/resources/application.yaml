@@ -2,7 +2,7 @@ app:
   env: none
 
 server:
-    port: 8443
+    port: 443
 spring:
   profiles:
     active: local,prod
