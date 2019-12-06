@@ -11,6 +11,7 @@ public interface EventService {
 	  String eventName,
       String description,
       MultipartFile multipartFile,
+      String location,
       int totalTickets,
       double ticketPrice,
       Instant startTime,

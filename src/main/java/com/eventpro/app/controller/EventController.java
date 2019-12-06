@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /** @author choang on 10/23/19 */
 /** @author manishayacham on 11/19/19 - implemented List API's */
+/** @author leela alekhya on 12/5/19 */
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/events")
@@ -48,10 +49,10 @@ public class EventController {
 	  Instant startTimeInstant = startTime.toInstant();
 	  Instant endTimeInstant = endTime.toInstant();
     String username = tokenProvider.getUserLogin(tokenProvider.resolveToken(request));
-   	  
+   	  String location = "SJSU Event Center";
     return ResponseEntity.ok(
         eventService.createEvent(eventName,
-            description, file, totalTickets, ticketPrice, startTimeInstant, endTimeInstant, username));
+            description, file, location, totalTickets, ticketPrice, startTimeInstant, endTimeInstant, username));
 
   }
   @GetMapping("/list")
