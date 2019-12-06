@@ -1,5 +1,5 @@
 app:
-  env: none
+  env: preprod
 
 server:
   port: 8443
