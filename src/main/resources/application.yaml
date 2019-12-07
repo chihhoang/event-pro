@@ -1,5 +1,5 @@
 app:
-  env: hello Mr Bond
+  env: Hello Admin
 
 server:
   port: 8443
